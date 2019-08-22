@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Component } from 'react';
 
 import {
   Animated,
@@ -153,6 +153,7 @@ export default class Slider extends PureComponent {
      */
     debugTouchArea: PropTypes.bool,
 
+    renderThumb: () => Component,
     /**
      * Set to true to animate values with default 'timing' animation type
      */
@@ -299,7 +300,7 @@ export default class Slider extends PureComponent {
             },
           ]}
         >
-          {this._renderThumbImage()}
+          {this.renderThumb()}
         </Animated.View>
         <View
           renderToHardwareTextureAndroid
